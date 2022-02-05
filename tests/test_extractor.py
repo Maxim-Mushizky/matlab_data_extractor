@@ -6,6 +6,7 @@ from src.matlab_extractor.extractor import MatlabExtractor
 FOLDER_PATH = r"sources\matlab_saved_workspaces"
 
 
+@pytest.mark.converter
 @pytest.mark.parametrize('matlab_path',
                          [os.path.join(FOLDER_PATH, obj) for obj in os.listdir(FOLDER_PATH) if obj.endswith(".mat")])
 def test_extraction(matlab_path, matlab_folder_path, matlab_ws_keys, verification_key):
